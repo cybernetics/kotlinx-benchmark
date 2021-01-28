@@ -79,7 +79,6 @@ abstract class NativeSourceGeneratorWorker : WorkAction<NativeSourceGeneratorWor
     override fun execute() {
         cleanup(parameters.outputSourcesDir)
         cleanup(parameters.outputResourcesDir)
-        println(parameters.inputClassesDirs)
         parameters.inputClassesDirs
             .filter { it.exists() && it.name.endsWith(KLIB_FILE_EXTENSION_WITH_DOT) }
             .forEach { lib ->
